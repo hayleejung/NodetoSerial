@@ -20,7 +20,7 @@ var serialport = require("serialport"),		// include the serialport library
 	SerialPort  = serialport.SerialPort,	   // make a local instance of serial
 	express = require('express'),				   // make an instance of express
 	open = require('open'),                   // used to open the browser
-	url = 'http://latexpixel.herokuapp.com/';            // URL to open in the browser
+	url = 'http://localhost:8080';            // URL to open in the browser
 	
 var app = express(),								   // start Express framework
    server = require('http').createServer(app);		// start an HTTP server
@@ -29,9 +29,9 @@ var app = express(),								   // start Express framework
 app.use('/js', express.static(__dirname + '/js'));
  
 // third word of the command line is serial port name:
-console.log('hello', process.argv);
-var portName = process.argv[2];	
-// var portName = "/dev/tty.usbmodem1431";
+// console.log('hello', process.argv);
+// var portName = process.argv[2];	
+var portName = "/dev/tty.usbmodem1431";
 
 // print out the port you're listening on:
 console.log("opening serial port: " + portName);	
